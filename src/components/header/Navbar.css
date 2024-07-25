@@ -1,0 +1,6 @@
+.line {
+    width: 1px;
+    height: 30px;
+    margin: 0 5px;
+    background-color: var(--color-grey);
+}
