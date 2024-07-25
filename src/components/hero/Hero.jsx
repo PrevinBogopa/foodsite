@@ -30,7 +30,7 @@ export const Hero = () => {
         <h1 className="text-3xl sm:text-5xl mb-4 font-semibold text-white w-3/4 leading-snug">Delicious & Authentic <span className="text-yelloww leading-snug">Shisanyama Dishes</span></h1>
         <p className="text-white text-base mb-8">Experience the true taste of South African barbecue at our restaurant. Our Shisanyama dishes are prepared with care and served with love. Join us for a meal you won&apos;t forget.</p>
         <a href="#contact">
-            <button className="px-7 py-2 bg-yelloww text-white rounded hover:bg-green">Book a Table</button>
+            <button className="px-7 py-2 bg-yelloww text-white rounded hover:bg-green">Order Now</button>
         </a>  
     </div>
 </div>
@@ -43,7 +43,7 @@ export const Hero = () => {
         <h1 className="text-3xl sm:text-5xl mb-4 font-semibold text-white w-3/4 sm:w-full leading-snug">Experience Authentic <span className="text-yelloww leading-snug">Shisanyama</span> at Our Restaurant</h1>
         <p className="text-white text-base mb-8">Indulge in the rich flavors of our traditional Shisanyama. From the grill to your plate, we promise a dining experience that&apos;s truly South African.</p>
         <a href="#contact">
-            <button className="px-7 py-2 bg-yelloww text-white rounded hover:bg-green">Book a Table</button>
+            <button className="px-7 py-2 bg-yelloww text-white rounded hover:bg-green">Order Now</button>
         </a>
     </div>
 </div>
