@@ -11,7 +11,7 @@ function Footer() {
         <div className="py-14 grid grid-cols-12 gap-x-2 gap-y-8">
             <div className="col-span-full xl:col-span-3 relative bg-gradient-to-tr from-green to-primarygray rounded-2xl gap-8 p-6 xl:w-72 h-70 xl:h-65 flex flex-col justify-center items-center">
                 
-                <a href="https://pagedone.io/" className="flex justify-center lg:justify-start">
+                <a href=" /" className="hover:animate-ping flex justify-center lg:justify-start">
  
             <img src={restu} alt="" width={60} />
  

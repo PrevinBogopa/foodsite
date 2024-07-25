@@ -38,13 +38,54 @@ function Header() {
         <img src={logo} alt="app logo" className="h-30 w-48" />
       </div>
       <div>
-        <ul className="hidden md:flex flex-shrink-0">
-          <NavLink to="/" className="p-4 text-primarygray hover:text-green px-12 text-2xl font-bold" onClick={() => window.scrollTo(0, 0)}>Home</NavLink>
-          <NavLink to="/about" className="p-4 text-primarygray hover:text-green px-12 text-2xl font-bold" onClick={() => window.scrollTo(0, 0)}>About</NavLink>
-          <NavLink to="/menu" className="p-4 text-primarygray hover:text-green px-12 text-2xl font-bold" onClick={() => window.scrollTo(0, 0)}>Menu</NavLink>
-          <NavLink to="/calendar" className="p-4 text-primarygray hover:text-green px-12 text-2xl font-bold" onClick={() => window.scrollTo(0, 0)}>Events</NavLink>
-          <NavLink to="/contact" className="p-4 text-primarygray hover:text-green px-12 text-2xl font-bold" onClick={() => window.scrollTo(0, 0)}>Contact</NavLink>
-        </ul>
+      <ul className="hidden md:flex flex-shrink-0">
+      
+      
+       
+
+      <NavLink 
+        to="/" 
+        className={`p-4 text-primarygray hover:text-green px-12 text-2xl font-bold relative ${location.pathname === '/' ? 'active' : ''}`}
+        onClick={() => window.scrollTo(0, 0)}
+      >
+    Home
+
+  <span className={`absolute bottom-0 left-0 ${location.pathname === '/' ? 'w-full' : 'w-0'} bg-green h-1 transition-all duration-400`}></span>
+  </NavLink>
+
+      <NavLink 
+        to="/about" 
+        className={`p-4 text-primarygray hover:text-green px-12 text-2xl font-bold relative ${location.pathname === '/about' ? 'active' : ''}`}
+        onClick={() => window.scrollTo(0, 0)}
+      >
+        About
+        <span className={`absolute bottom-0 left-0 ${location.pathname === '/about' ? 'w-full' : 'w-0'} bg-green h-1 transition-all duration-400`}></span>
+      </NavLink>
+  <NavLink 
+    to="/menu" 
+    className={`p-4 text-primarygray hover:text-green px-12 text-2xl font-bold relative ${location.pathname === '/menu' ? 'active' : ''}`}
+    onClick={() => window.scrollTo(0, 0)}
+  >
+    Menu
+    <span className={`absolute bottom-0 left-0 ${location.pathname === '/menu' ? 'w-full' : 'w-0'} bg-green h-1 transition-all duration-400`}></span>
+  </NavLink>
+  <NavLink 
+    to="/calendar" 
+    className={`p-4 text-primarygray hover:text-green px-12 text-2xl font-bold relative ${location.pathname === '/calendar' ? 'active' : ''}`}
+    onClick={() => window.scrollTo(0, 0)}
+  >
+    Events
+    <span className={`absolute bottom-0 left-0 ${location.pathname === '/calendar' ? 'w-full' : 'w-0'} bg-green h-1 transition-all duration-400`}></span>
+  </NavLink>
+  <NavLink 
+    to="/contact" 
+    className={`p-4 text-primarygray hover:text-green px-12 text-2xl font-bold relative ${location.pathname === '/contact' ? 'active' : ''}`}
+    onClick={() => window.scrollTo(0, 0)}
+  >
+    Contact
+    <span className={`absolute bottom-0 left-0 ${location.pathname === '/contact' ? 'w-full' : 'w-0'} bg-green h-1 transition-all duration-400`}></span>
+  </NavLink>
+</ul>
       </div>
       <div>
         <button className="hidden md:flex bg-primarygray hover:text-white px-8 py-2 text-xl hover:bg-red-500">Order now</button>

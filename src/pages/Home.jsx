@@ -23,7 +23,7 @@ function Home() {
 
       <div className="grid grid-cols-2  mx-auto max-w-7xl px-4 sm:px-3 lg:px-8  md:grid-cols-2 gap-4">
  
-      <div className="image-overlay">
+      <div className="image-overlay hover:shadow-lg dark:hover:shadow-black/30">
         <img className="h-auto max-w-full rounded-lg " src={ foodCategoryImg01} alt=""/>
 <p className="sm:text-base text-sm">Street Chow</p>
     </div>
@@ -51,10 +51,8 @@ function Home() {
 
 
 <section className="grid grid-cols-1 gap-4 px-4 md:grid-cols-2 md:px-40">
-  <div className="col-span-1 md:mt-10">
-    <img src={whyImg} alt="" className="w-full" />
-  </div>
-  <div className="col-span-1 flex flex-col mt-4 md:mt-32 lg:mt-52 px-5 md:px-10 md:ml-5 md:px-20">
+
+  <div className="col-span-1 flex flex-col mt-4 pt-7 md:mt-10 lg:mt-52 px-5 md:px-10 md:ml-5 md:px-20">
     <div className="flex flex-col justify-center items-center text-center md:text-left">
       <h3 className="text-2xl md:text-3xl font-semibold">
         Why <b className="text-red-600">Sha&apos;p Braai</b>?
@@ -77,6 +75,9 @@ function Home() {
         <span>Best Service guaranteed</span>
       </div>
     </div>
+  </div>
+  <div className="col-span-1 md:mt-10">
+    <img src={whyImg} alt="" className="w-full" />
   </div>
 </section>
 

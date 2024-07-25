@@ -1,0 +1,7 @@
+/* src/custom.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.relative:hover span {
+    width: 100% !important;
+  }
