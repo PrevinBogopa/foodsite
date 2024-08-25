@@ -110,9 +110,9 @@ function Header() {
         <li className="p-4 border-b border-gray-600 bg-[rgba(0,0,0,0.6)] backdrop-blur-2xl">
           <Link to="/calendar" className="text-white" onClick={() => { window.scrollTo(0, 0); setNav(false); }}>Events</Link>
         </li>
-        <li className="p-4 border-b border-gray-600 bg-[rgba(0,0,0,0.6)] backdrop-blur-2xl">
+        <li className="p-4 border-b  s border-gray-600 bg-[rgba(0,0,0,0.6)] backdrop-blur-2xl">
           <Link to="/contact" className="text-white" onClick={() => { window.scrollTo(0, 0); setNav(false); }}>Contact</Link>
-        </li>
+          </li>
       </ul>
     </div>
   );
