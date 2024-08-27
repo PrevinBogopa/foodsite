@@ -52,7 +52,7 @@ const Events = () => {
     const [hour, minute] = time.split(":").map(Number); // Convert to numbers
     const formattedHour = hour % 12 || 12; // Adjust for 12-hour format
     
-    const period = hour >= 12 ? 'PM' : 'AM';
+    const period = hour >= 12 ? 'PM' : 'AM' ;
     return `${formattedHour}:${minute.toString().padStart(2, '0')} ${period}`;
   };
 
