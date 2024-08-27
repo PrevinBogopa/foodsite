@@ -27,14 +27,8 @@ const Eventxs = ( ) => {
               <div className="flex items-center gap-2 flex-wrap">
               <p className="font-bold font-heading">{month}</p>
       <p className="text-gray-500 font-medium">{year}</p>
-      <a className="text-gray-400 hover:text-gray-600 transition duration-200" href="#" onClick={() => setShowMonths(!showMonths)}>
+      
  
- 
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-    <path d="M13 5.5L8 10.5L3 5.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
- 
-      </a>
       {showMonths && (
                 <div className="absolute bg-white border rounded-md mt-2 p-2">
                   {months.map((month, index) => (
