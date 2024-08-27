@@ -1,14 +1,33 @@
-import { useState } from 'react';
-
+import   { useState, useEffect } from 'react';
+import axios from 'axios';
 const Events = () => {
   const [date, setDate] = useState(new Date('2024-08-27')); // Hard-coded current date for now
   const [showMonths, setShowMonths] = useState(false);
+  const [events, setEvents] = useState([]);
 
+  useEffect(() => {
+      axios.get('http://localhost:8000/api/events/')  // Adjust the URL based on your API endpoint
+          .then(response => {
+              setEvents(response.data);
+          })
+          .catch(error => {
+              console.error("There was an error fetching the events!", error);
+          });
+  }, []);
   const month = date.toLocaleString('default', { month: 'long' });
   const year = date.getFullYear();
   const weekStart = new Date(date);
   weekStart.setDate(weekStart.getDate() - weekStart.getDay());
+  const formatTime = (time) => {
+    const [hour, minute] = time.split(":");
+    const formattedHour = hour > 12 ? hour - 12 : hour;
+    const period = hour >= 12 ? 'PM' : 'AM';
+    return `${formattedHour}:${minute} ${period}`;
+};
 
+const isWholeDay = (startTime, endTime) => {
+  return startTime === "00:00:00" && endTime === "23:59:59";
+};
   const nextWeek = () => {
     setDate(new Date(date.setDate(date.getDate() + 7)));
   };
@@ -54,26 +73,32 @@ const Events = () => {
           <div className="overflow-x-auto relative">
             <div className="absolute bottom-0 left-0 w-full h-24" style={{ background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.60) 53.65%, #FFF 100%)' }}></div>
             <div className="flex">
-                <div className="flex flex-col flex-1">
-                  <div className="border-t border-b border-gray-50 py-2 px-24">
-                    <p className="text-center text-gray-500 text-sm font-semibold">Mon</p>
-                  </div>
-                  <div className="flex-1 border-r border-gray-50">
-                    <a className="bg-orange-50 py-3 px-4 flex flex-wrap gap-3 hover:bg-orange-100 transition duration-200" href="#">
-                      <div className="bg-orange-500 w-5 h-5 flex items-center justify-center rounded-md">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                          <path d="M8.35879 8.2051L8.35996 8.20616C8.77017 8.57643 8.9041 9.14137 8.70399 9.65877C8.50383 10.1713 8.02404 10.5 7.46999 10.5H4.52499C3.97517 10.5 3.49091 10.1706 3.29102 9.65885C3.09086 9.14143 3.22479 8.57645 3.63502 8.20616L3.63502 8.20616L3.63619 8.20509L5.51319 6.5H6.48179L8.35879 8.2051ZM5.08999 9.57H6.90999C7.37113 9.57 7.74999 9.19114 7.74999 8.73C7.74999 8.27365 7.3809 7.89 6.90999 7.89H5.08999C4.62885 7.89 4.24999 8.26886 4.24999 8.73C4.24999 9.18634 4.61907 9.57 5.08999 9.57Z" fill="white" stroke="white"></path>
-                          <path d="M9.17496 2.16C8.89996 1.455 8.22996 1 7.47496 1H4.52496C3.76996 1 3.09996 1.455 2.82496 2.16C2.55496 2.87 2.73996 3.655 3.30496 4.165L5.32496 6H6.67996L8.69996 4.165C9.25996 3.655 9.44496 2.87 9.17496 2.16ZM6.90996 3.615H5.08996C4.89996 3.615 4.74996 3.46 4.74996 3.275C4.74996 3.09 4.90496 2.935 5.08996 2.935H6.90996C7.09996 2.935 7.24996 3.09 7.24996 3.275C7.24996 3.46 7.09496 3.615 6.90996 3.615Z" fill="white"></path>
-                        </svg>
-                      </div>
-                      <div>
-                        <p className="text-orange-900 text-xs font-bold font-heading mb-1">Mogodu Monday</p>
-                        <p className="text-gray-600 text-xs mb-3">9:00 AM −   (whole day)</p>
-                        <div className="inline-block py-1 px-2 rounded-md bg-orange-50 border border-orange-100 text-green text-xs font-medium mb-4">Event</div>
-                      </div>
-                    </a>
-                  </div>
+            {events.map((event, index) => (
+                <div key={index} className="flex flex-col flex-1">
+                    <div className="border-t border-b border-gray-50 py-2 px-24">
+                        <p className="text-center text-gray-500 text-sm font-semibold">{new Date(event.date).toLocaleString('en-US', { weekday: 'short' })}</p>
+                    </div>
+                    <div className="flex-1 border-r border-gray-50">
+                        <a className="bg-orange-50 py-3 px-4 flex flex-wrap gap-3 hover:bg-orange-100 transition duration-200" href="#">
+                            <div className="bg-orange-500 w-5 h-5 flex items-center justify-center rounded-md">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                    <path d="M8.35879 8.2051L8.35996 8.20616C8.77017 8.57643 8.9041 9.14137 8.70399 9.65877C8.50383 10.1713 8.02404 10.5 7.46999 10.5H4.52499C3.97517 10.5 3.49091 10.1706 3.29102 9.65885C3.09086 9.14143 3.22479 8.57645 3.63502 8.20616L3.63502 8.20616L3.63619 8.20509L5.51319 6.5H6.48179L8.35879 8.2051ZM5.08999 9.57H6.90999C7.37113 9.57 7.74999 9.19114 7.74999 8.73C7.74999 8.27365 7.3809 7.89 6.90999 7.89H5.08999C4.62885 7.89 4.24999 8.26886 4.24999 8.73C4.24999 9.18634 4.61907 9.57 5.08999 9.57Z" fill="white" stroke="white"></path>
+                                    <path d="M9.17496 2.16C8.89996 1.455 8.22996 1 7.47496 1H4.52496C3.76996 1 3.09996 1.455 2.82496 2.16C2.55496 2.87 2.73996 3.655 3.30496 4.165L5.32496 6H6.67996L8.69996 4.165C9.25996 3.655 9.44496 2.87 9.17496 2.16ZM6.90996 3.615H5.08996C4.89996 3.615 4.74996 3.46 4.74996 3.275C4.74996 3.09 4.90496 2.935 5.08996 2.935H6.90996C7.09996 2.935 7.24996 3.09 7.24996 3.275C7.24996 3.46 7.09496 3.615 6.90996 3.615Z" fill="white"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <p className="text-orange-900 text-xs font-bold font-heading mb-1">{event.title}</p>
+                                <p className="text-gray-600 text-xs mb-3">
+                                    {formatTime(event.time)} − {isWholeDay(event.time, event.end_time) ? 'Whole day' : formatTime(event.end_time)}
+                                </p>
+                                <div className="inline-block py-1 px-2 rounded-md bg-orange-50 border border-orange-100 text-green text-xs font-medium mb-4">
+                                    {event.category}
+                                </div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
+            ))}
                 <div className="flex flex-col flex-1">
                   <div className="border-t border-b border-gray-50 py-2 px-24">
                     <p className="text-center text-gray-500 text-sm font-semibold">Tue</p>
