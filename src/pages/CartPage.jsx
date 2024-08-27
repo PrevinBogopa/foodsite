@@ -174,7 +174,7 @@ const Events = () => {
             </a>
           ))
         ) : (
-          <div className="py-3 px-4 text-center text-gray-500">No events</div>
+          <div className="py-3 px-4 text-center text-gray-500">No event</div>
         )}
       </div>
       
