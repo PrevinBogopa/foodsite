@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import logo from '../../assets/images/resturant.png';
@@ -44,6 +45,23 @@ const responsive = {
 };
 
 export const Hero = () => {
+ 
+  
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const buttonStyle = {
+    textAlign: windowWidth < 640 ? 'center' : 'left',
+  };
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+const imageStyle = {
+  height: windowWidth < 640 ? '140px' : windowWidth < 768 ? '200px' : windowWidth < 1024 ? '330px' : windowWidth < 1280 ? '500px' : '600px',
+  width: windowWidth < 640 ? '130px' : windowWidth < 768 ? '200px' : windowWidth < 1024 ? '280px' : windowWidth < 1280 ? '480px' : '570px',
+  paddingTop: windowWidth >= 640 && windowWidth < 768 ? '50px' : windowWidth >= 768 && windowWidth < 1024 ? '120px' : windowWidth >= 1024 && windowWidth < 1280 ? '60px' : '0px',
+};
+
   return (
     <div className="relative mt-0">
       <div className="absolute mt-0 top-0 inset-0 z-0 overflow-hidden">
@@ -54,9 +72,9 @@ export const Hero = () => {
       </div>
       <div className="inset-0 z-10 px-4 lg:px-14 max-w-screen-2xl mx-auto min-h-screen h-screen flex flex-col justify-center items-center">
         <div className="flex flex-col md:flex-row items-center justify-between w-full mx-auto gap-12 z-30 relative">
-          <div className="mx z-30 w-full md:w-auto">
-            <img src={logo} alt="Restaurant Logo" className="w-full max-w-xs md:max-w-sm lg:max-w-md xl:max-w-lg mx-auto md:mx-0" />
-          </div>
+        <div className="z-30 mt-16 md:mt-0 md:pt-0 -mt-12">
+      <img src={logo} alt="Restaurant Logo" style={imageStyle} />
+    </div>
           <div className="w-full sm:w-1/2 z-30">
           <Carousel 
               responsive={responsive} 
@@ -65,35 +83,34 @@ export const Hero = () => {
               autoPlaySpeed={3000} 
               showDots={true}
               keyBoardControl={true}
-              className="w-full mx-auto z-20 relative"
+              className="w-full mx-auto z-20 relative -mt-8"
               containerClass="relative"
               dotListClass="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-30"
               customLeftArrow={<CustomLeftArrow />}
               customRightArrow={<CustomRightArrow />}
             > 
-
-              <div className="my-8 sm:my-28 py-12 w-full p-12">
-                <h1 className="text-3xl sm:text-5xl mb-4 font-semibold text-white w-3/4 sm:w-full leading-snug">
-                  Experience Authentic <span className="text-yelloww leading-snug">Shisanyama</span> at Our Restaurant
-                </h1>
-                <p className="text-white text-base mb-8">
-                  Indulge in the rich flavors of our traditional Shisanyama. From the grill to your plate, we promise a dining experience that's truly South African.
-                </p>
-              </div>
-              <div className="my-8 sm:my-28 py-12 w-full p-12">
-                <h1 className="text-3xl sm:text-5xl mb-4 font-semibold text-white w-3/4 sm:w-full leading-snug">
-                  Delicious & Authentic <span className="text-yelloww leading-snug">Shisanyama Dishes</span>
-                </h1>
-                <p className="text-white text-base mb-8">
-                  Experience the true taste of South African barbecue at our restaurant. Our Shisanyama dishes are prepared with care and served with love. Join us for a meal you won't forget.
-                </p>
-              </div>
+<div className="w-full px-12">
+  <h1 className="text-xl sm:text-3xl mb-4 font-semibold text-white w-3/4 sm:w-full leading-snug">
+    Experience Authentic <span className="text-yellow">Shisanyama</span> at Our Restaurant
+  </h1>
+  <p className="text-white text-base mb-8">
+    Indulge in the rich flavors of our traditional Shisanyama. From the grill to your plate, we promise a dining experience that's truly South African.
+  </p>
+</div>
+<div className="w-full px-12">
+  <h1 className="text-xl sm:text-3xl mb-4 font-semibold text-white w-3/4 sm:w-full leading-snug">
+    Delicious & Authentic <span className="text-yellow">Shisanyama Dishes</span>
+  </h1>
+  <p className="text-white text-base mb-8">
+    Experience the true taste of South African barbecue at our restaurant. Our Shisanyama dishes are prepared with care and served with love. Join us for a meal you won't forget.
+  </p>
+</div>
             </Carousel>
-            <div className="mt-8 z-30">
-              <a href="#contact">
-                <button className="px-7 py-2 bg-yelloww text-white rounded hover:bg-green">Order Now</button>
-              </a>
-            </div>
+            <div className="mt-8 z-30" style={buttonStyle}>
+    <a href="#contact">
+      <button className="px-7 py-2 bg-yelloww text-white rounded hover:bg-green">Order Now</button>
+    </a>
+  </div>
           </div>
         </div>
       </div>

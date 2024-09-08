@@ -4,6 +4,7 @@ import foodCategoryImg01 from "../assets/imagesAll/kotap.png";
   import { AiOutlineCheckCircle } from "react-icons/ai";
 import foodCategoryImg03 from "../assets/imagesAll/pizzza.png";
 import foodCategoryImg05 from "../assets/imagesAll/braii.png";
+import foodCategoryImg07 from "../assets/imagesAll/bev.png";
 import foodCategoryImg06 from "../assets/imagesAll/addon.png";
 import whyImg from "../assets/imagesAll/location.png";
 import foodCategoryImg04 from "../assets/imagesAll/poto.png";
@@ -21,29 +22,33 @@ function Home() {
 
 
 
-      <div className="grid grid-cols-2  mx-auto max-w-7xl px-4 sm:px-3 lg:px-8  md:grid-cols-2 gap-4">
- 
-      <div className="image-overlay hover:shadow-lg dark:hover:shadow-black/30">
-        <img className="h-auto max-w-full rounded-lg " src={ foodCategoryImg01} alt=""/>
-<p className="sm:text-base text-sm">Street Chow</p>
-    </div>
-    <div className="image-overlay">
-        <img className="h-auto max-w-full rounded-lg"  src={ foodCategoryImg03}  alt=""/>
-        <p className="sm:text-base text-sm">Pizza</p>
-    </div>
-    <div className="col-span-2 image-overlay">
+      <div className="grid grid-cols-4 mx-auto max-w-7xl px-4 sm:px-3 lg:px-8 md:grid-cols-4 gap-4">
+      <div className="col-span-2 image-overlay">
         <img className="h-auto w-full rounded-lg"  src={ foodCategoryImg04}  alt=""/>
         <p className="sm:text-base text-sm">Main Meals</p>
     </div>
-    <div className="image-overlay">
+ <div className="col-span-2 image-overlay hover:shadow-lg dark:hover:shadow-black/30">
+   <img className="h-auto max-w-full rounded-lg " src={ foodCategoryImg01} alt=""/>
+   <p className="sm:text-base text-sm">Street Chow</p>
+ </div>
+ <div className="col-span-2 image-overlay">
         <img className="h-auto max-w-full rounded-lg"  src={ foodCategoryImg05}  alt=""/>
         <p className="sm:text-base text-sm">Combo Meals</p>
     </div>
-    <div className="image-overlay">
+ <div className="col-span-2 image-overlay">
+   <img className="h-auto max-w-full rounded-lg"  src={ foodCategoryImg03}  alt=""/>
+   <p className="sm:text-base text-sm">Pizza</p>
+ </div>
+
+ 
+    <div className="col-span-2 image-overlay">
         <img className="h-auto max-w-full rounded-lg"  src={ foodCategoryImg06}  alt=""/>
         <p className="sm:text-base text-sm">Add ons</p>
     </div>
- 
+    <div className="col-span-2 image-overlay">
+        <img className="h-auto max-w-full rounded-lg"  src={ foodCategoryImg07}  alt=""/>
+        <p className="sm:text-base text-sm">Beverages</p>
+    </div>
 </div>
 
 

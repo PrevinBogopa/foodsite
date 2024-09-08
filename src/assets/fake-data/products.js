@@ -23,6 +23,12 @@ import product_06_image_01 from "../imagesAll/bread(1).png";
 import product_06_image_02 from "../imagesAll/bread(2).png";
 import product_06_image_03 from "../imagesAll/bread(3).png";
 
+import product_burger_icon from "../images/burger_icon.png";
+// Add new images for the new categories
+// import beverage_image_01 from "../imagesAll/beverage_01.jpg";
+// import beverage_image_02 from "../imagesAll/beverage_02.jpg";
+// import streechow_image_01 from "../imagesAll/streechow_01.jpg";
+
 const products = [
   {
     id: "01",
@@ -32,8 +38,7 @@ const products = [
     image02: product_01_image_02,
     image03: product_01_image_03,
     category: "Burger",
-
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque. ",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
   },
 
   {
@@ -44,7 +49,6 @@ const products = [
     image02: product_02_image_02,
     image03: product_02_image_03,
     category: "Pizza",
-
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
   },
 
@@ -56,19 +60,17 @@ const products = [
     image02: product_03_image_02,
     image03: product_03_image_03,
     category: "Pizza",
-
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
   },
 
   {
     id: "04",
-    title: "Maxican Green Wave",
+    title: "Mexican Green Wave",
     price: 110.0,
     image01: product_04_image_01,
     image02: product_04_image_02,
     image03: product_04_image_03,
     category: "Pizza",
-
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
   },
 
@@ -80,9 +82,9 @@ const products = [
     image02: product_05_image_02,
     image03: product_05_image_03,
     category: "Burger",
-
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
   },
+
   {
     id: "06",
     title: "Royal Cheese Burger",
@@ -91,7 +93,6 @@ const products = [
     image02: product_01_image_02,
     image03: product_01_image_03,
     category: "Burger",
-
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
   },
 
@@ -103,7 +104,6 @@ const products = [
     image02: product_02_image_01,
     image03: product_02_image_03,
     category: "Pizza",
-
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
   },
 
@@ -115,7 +115,6 @@ const products = [
     image02: product_03_image_01,
     image03: product_03_image_03,
     category: "Pizza",
-
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
   },
 
@@ -127,7 +126,6 @@ const products = [
     image02: product_04_image_01,
     image03: product_04_image_03,
     category: "Pizza",
-
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
   },
 
@@ -139,45 +137,88 @@ const products = [
     image02: product_05_image_01,
     image03: product_05_image_03,
     category: "Burger",
-
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
   },
 
   {
     id: "11",
-    title: "Crunchy Bread ",
+    title: "Crunchy Bread",
     price: 35.0,
     image01: product_06_image_01,
     image02: product_06_image_02,
     image03: product_06_image_03,
     category: "Bread",
-
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
   },
 
   {
     id: "12",
-    title: "Delicious Bread ",
+    title: "Delicious Bread",
     price: 35.0,
     image01: product_06_image_02,
     image02: product_06_image_01,
     image03: product_06_image_03,
     category: "Bread",
-
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
   },
 
   {
     id: "13",
-    title: "Loaf Bread ",
+    title: "Loaf Bread",
     price: 35.0,
     image01: product_06_image_03,
     image02: product_06_image_02,
     image03: product_06_image_03,
     category: "Bread",
-
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
+  },
+
+  {
+    id: "14",
+    title: "Loaf Bread",
+    price: 35.0,
+    image01: product_06_image_03,
+    image02: product_06_image_02,
+    image03: product_06_image_03,
+    category: "Main_meals",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
+  },
+
+  // New category: Beverages
+  {
+    id: "15",
+    title: "Fresh Lemonade",
+    price: 5.0,
+    image01: product_06_image_03,
+    image02: product_06_image_03,
+    image03: product_06_image_03,
+    category: "Beverages",
+    desc: "A refreshing glass of freshly squeezed lemonade to quench your thirst.",
+  },
+
+  {
+    id: "16",
+    title: "Iced Coffee",
+    price: 6.0,
+    image01: product_06_image_03,
+    image02: product_06_image_03,
+    image03: product_06_image_03,
+    category: "Beverages",
+    desc: "Chilled and brewed to perfection, this iced coffee is a perfect pick-me-up.",
+  },
+
+  // New category: Street Food
+  {
+    id: "17",
+    title: "Street_Chow",
+    price: 8.0,
+    image01: product_burger_icon,
+    image02: product_06_image_03,
+    image03: product_06_image_03,
+    category: "Street_Chow",
+    desc: "Delicious and crispy street food served hot and fresh.",
   },
 ];
 
 export default products;
+
