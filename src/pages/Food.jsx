@@ -1,57 +1,31 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";  // Import useLocation
 import products from "../assets/fake-data/products.js";
 import ProductCard from "../components/UI/product-card/ProductCard";
 import foodCategoryImg01 from "../assets/imagesAll/hamburger.png";
 import foodCategoryImg02 from "../assets/imagesAll/pizza.png";
+import bevIcon from "../assets/fake-data/bev_icvon.png";
 import foodCategoryImg03 from "../assets/imagesAll/bread.png";
 import streetchow_icon from "../assets/fake-data/streetchow_icon.png";
+
 function Food() {
+  const location = useLocation();  // Access location state
   const [category, setCategory] = useState("ALL");
   const [allProducts, setAllProducts] = useState(products);
+
+  // Set category based on passed state (if available) when the component mounts
+  useEffect(() => {
+    if (location.state && location.state.category) {
+      setCategory(location.state.category);
+    }
+  }, [location.state]);
 
   useEffect(() => {
     if (category === "ALL") {
       setAllProducts(products);
-    }
-    if (category === "Main_meals") {
+    } else {
       const filteredProducts = products.filter(
-        (item) => item.category === "Main_meals"
-      );
-      setAllProducts(filteredProducts);
-    }
-    if (category === "Street_Chow") {
-      const filteredProducts = products.filter(
-        (item) => item.category === "Street_Chow"
-      );
-      setAllProducts(filteredProducts);
-    }
-    if (category === "PIZZA") {
-      const filteredProducts = products.filter(
-        (item) => item.category === "Pizza"
-      );
-      setAllProducts(filteredProducts);
-    }
-    if (category === "Combos") {
-      const filteredProducts = products.filter(
-        (item) => item.category === "Combos"
-      );
-      setAllProducts(filteredProducts);
-    }
-    if (category === "BREAD") {
-      const filteredProducts = products.filter(
-        (item) => item.category === "Bread"
-      );
-      setAllProducts(filteredProducts);
-    }
-    if (category === "Beverages") {
-      const filteredProducts = products.filter(
-        (item) => item.category === "Beverages"
-      );
-      setAllProducts(filteredProducts);
-    }
-    if (category === "Add_ons") {
-      const filteredProducts = products.filter(
-        (item) => item.category === "Add_ons"
+        (item) => item.category === category
       );
       setAllProducts(filteredProducts);
     }
@@ -95,7 +69,7 @@ function Food() {
               Add ons
             </button>
             <button className="flex gap-2 items-center" onClick={() => setCategory("Beverages")}>
-              <img src={foodCategoryImg03} alt="Beverages" width={30} height={30} />
+              <img src={bevIcon} alt="Beverages" width={30} height={30} />
               Beverages
             </button>
           </div>

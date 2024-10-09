@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import logo from '../../assets/images/resturant.png';
-import videoSource from "../../assets/images/backround.mp4";
+import videoSource from "../../assets/images/backgroundd.mp4";
 
 const CustomLeftArrow = ({ onClick }) => (
   <button
@@ -64,13 +64,13 @@ const imageStyle = {
 
   return (
     <div className="relative mt-0">
-      <div className="absolute mt-0 top-0 inset-0 z-0 overflow-hidden">
+      <div className="absolute mt-0 top-0 inset-0 z-0 overflow-hidden ">
         <video autoPlay loop muted playsInline className="top-0 w-full h-full object-cover">
           <source src={videoSource} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
-      <div className="inset-0 z-10 px-4 lg:px-14 max-w-screen-2xl mx-auto min-h-screen h-screen flex flex-col justify-center items-center">
+      <div className="inset-0 z-10 px-4 lg:px-14 max-w-screen-2xl mx-auto min-h-screen h-screen flex flex-col justify-center items-center ">
         <div className="flex flex-col md:flex-row items-center justify-between w-full mx-auto gap-12 z-30 relative">
         <div className="z-30 mt-16 md:mt-0 md:pt-0 -mt-12">
       <img src={logo} alt="Restaurant Logo" style={imageStyle} />

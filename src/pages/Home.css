@@ -22,7 +22,22 @@
     z-index: 2;
     color: white;
   }
+  .responsive-img {
+    width: 50%;
+    height: auto;
+  }
 
+  @media (min-width: 768px) {
+    .responsive-img {
+      width: 30%;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .responsive-img {
+      width: 15%;
+    }
+  }
   @media (max-width: 640px) {
     .fade-from-left-mobile {
       opacity: 0;

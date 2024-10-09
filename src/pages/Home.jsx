@@ -7,9 +7,11 @@ import foodCategoryImg05 from "../assets/imagesAll/braii.png";
 import foodCategoryImg07 from "../assets/imagesAll/bev.png";
 import foodCategoryImg06 from "../assets/imagesAll/addon.png";
 import whyImg from "../assets/imagesAll/location.png";
+import order from "../assets/order-now.png";
 import foodCategoryImg04 from "../assets/imagesAll/poto.png";
 import Testimonials from "../components/UI/slider/Testimonials";
 import './Home.css';
+import { Link } from 'react-router-dom';
 function Home() {
  
   return (
@@ -23,32 +25,121 @@ function Home() {
 
 
       <div className="grid grid-cols-4 mx-auto max-w-7xl px-4 sm:px-3 lg:px-8 md:grid-cols-4 gap-4">
-      <div className="col-span-2 image-overlay">
-        <img className="h-auto w-full rounded-lg"  src={ foodCategoryImg04}  alt=""/>
-        <p className="sm:text-base text-sm">Main Meals</p>
-    </div>
- <div className="col-span-2 image-overlay hover:shadow-lg dark:hover:shadow-black/30">
-   <img className="h-auto max-w-full rounded-lg " src={ foodCategoryImg01} alt=""/>
-   <p className="sm:text-base text-sm">Street Chow</p>
- </div>
- <div className="col-span-2 image-overlay">
-        <img className="h-auto max-w-full rounded-lg"  src={ foodCategoryImg05}  alt=""/>
-        <p className="sm:text-base text-sm">Combo Meals</p>
-    </div>
- <div className="col-span-2 image-overlay">
-   <img className="h-auto max-w-full rounded-lg"  src={ foodCategoryImg03}  alt=""/>
-   <p className="sm:text-base text-sm">Pizza</p>
- </div>
 
- 
-    <div className="col-span-2 image-overlay">
-        <img className="h-auto max-w-full rounded-lg"  src={ foodCategoryImg06}  alt=""/>
-        <p className="sm:text-base text-sm">Add ons</p>
-    </div>
-    <div className="col-span-2 image-overlay">
-        <img className="h-auto max-w-full rounded-lg"  src={ foodCategoryImg07}  alt=""/>
-        <p className="sm:text-base text-sm">Beverages</p>
-    </div>
+{/* Main Meals */}
+<div className="relative col-span-2">
+  <div className="image-overlay">
+    <img className="h-auto w-full rounded-lg" src={foodCategoryImg04} alt="Main Meals" />
+    <Link
+      to={{
+        pathname: "/menu",
+      }}
+      state={{ category: "Main_meals" }} // Passing state to the Food component
+      className="z-10 absolute top-1 left-1/2 transform -translate-x-1/2"
+    >
+      <button className="px-7 py-2 bg-yelloww text-white rounded hover:bg-green flex items-center justify-center gap-2">
+        Order Now
+      </button>
+    </Link>
+    <p className="sm:text-base text-sm">Main Meals</p>
+  </div>
+</div>
+
+{/* Street Chow */}
+<div className="relative col-span-2">
+  <div className="image-overlay">
+    <img className="h-auto max-w-full rounded-lg" src={foodCategoryImg01} alt="Street Chow" />
+    <Link
+      to={{
+        pathname: "/menu",
+      }}
+      state={{ category: "Street_Chow" }} // Correct category for Street Chow
+      className="z-10 absolute top-1 left-1/2 transform -translate-x-1/2"
+    >
+      <button className="px-7 py-2 bg-yelloww text-white rounded hover:bg-green flex items-center justify-center gap-2">
+        Order Now
+      </button>
+    </Link>
+    <p className="sm:text-base text-sm">Street Chow</p>
+  </div>
+</div>
+
+{/* Combo Meals */}
+<div className="relative col-span-2">
+  <div className="image-overlay">
+    <img className="h-auto max-w-full rounded-lg" src={foodCategoryImg05} alt="Combo Meals" />
+    <Link
+      to={{
+        pathname: "/menu",
+      }}
+      state={{ category: "Combos" }} // Correct category for Combo Meals
+      className="z-10 absolute top-1 left-1/2 transform -translate-x-1/2"
+    >
+      <button className="px-7 py-2 bg-yelloww text-white rounded hover:bg-green flex items-center justify-center gap-2">
+        Order Now
+      </button>
+    </Link>
+    <p className="sm:text-base text-sm">Combo Meals</p>
+  </div>
+</div>
+
+{/* Pizza */}
+<div className="relative col-span-2">
+  <div className="image-overlay">
+    <img className="h-auto max-w-full rounded-lg" src={foodCategoryImg03} alt="Pizza" />
+    <Link
+      to={{
+        pathname: "/menu",
+      }}
+      state={{ category: "Pizza" }} // Correct category for Pizza
+      className="z-10 absolute top-1 left-1/2 transform -translate-x-1/2"
+    >
+      <button className="px-7 py-2 bg-yelloww text-white rounded hover:bg-green flex items-center justify-center gap-2">
+        Order Now
+      </button>
+    </Link>
+    <p className="sm:text-base text-sm">Pizza</p>
+  </div>
+</div>
+
+{/* Add-ons */}
+<div className="relative col-span-2">
+  <div className="image-overlay">
+    <img className="h-auto max-w-full rounded-lg" src={foodCategoryImg06} alt="Add ons" />
+    <Link
+      to={{
+        pathname: "/menu",
+      }}
+      state={{ category: "Add_ons" }} // Correct category for Add-ons
+      className="z-10 absolute top-1 left-1/2 transform -translate-x-1/2"
+    >
+      <button className="px-7 py-2 bg-yelloww text-white rounded hover:bg-green flex items-center justify-center gap-2">
+        Order Now
+      </button>
+    </Link>
+    <p className="sm:text-base text-sm">Add ons</p>
+  </div>
+</div>
+
+{/* Beverages */}
+<div className="relative col-span-2">
+  <div className="image-overlay">
+    <img className="h-auto max-w-full rounded-lg" src={foodCategoryImg07} alt="Beverages" />
+    <Link
+      to={{
+        pathname: "/menu",
+      }}
+      state={{ category: "Beverages" }} // Correct category for Beverages
+      className="z-10 absolute top-1 left-1/2 transform -translate-x-1/2"
+    >
+      <button className="px-7 py-2 bg-yelloww text-white rounded hover:bg-green flex items-center justify-center gap-2">
+        Order Now
+      </button>
+    </Link>
+    <p className="sm:text-base text-sm">Beverages</p>
+  </div>
+</div>
+
 </div>
 
 
